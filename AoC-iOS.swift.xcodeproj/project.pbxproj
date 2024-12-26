@@ -10,6 +10,9 @@
 		A9D1702E2D1D9F5A00744184 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1702D2D1D9F5A00744184 /* App.swift */; };
 		A9D170302D1D9F5A00744184 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1702F2D1D9F5A00744184 /* AppView.swift */; };
 		A9D170322D1D9F5B00744184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D170312D1D9F5B00744184 /* Assets.xcassets */; };
+		A9D170642D1DA55B00744184 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D170632D1DA55A00744184 /* Extensions.swift */; };
+		A9D170662D1DA87500744184 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D170652D1DA87300744184 /* Utils.swift */; };
+		A9D170682D1DB8A400744184 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D170672D1DB8A200744184 /* Modifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		A9D170312D1D9F5B00744184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9D1703A2D1D9F5C00744184 /* AoC-iOS.swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AoC-iOS.swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D170442D1D9F5C00744184 /* AoC-iOS.swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AoC-iOS.swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9D170632D1DA55A00744184 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A9D170652D1DA87300744184 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A9D170672D1DB8A200744184 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +58,11 @@
 		A9D170602D1DA30C00744184 /* Puzzles */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Puzzles;
+			sourceTree = "<group>";
+		};
+		A9D170692D1DBE2900744184 /* Inputs */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Inputs;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -84,6 +95,10 @@
 		A9D170212D1D9F5A00744184 = {
 			isa = PBXGroup;
 			children = (
+				A9D170692D1DBE2900744184 /* Inputs */,
+				A9D170672D1DB8A200744184 /* Modifiers.swift */,
+				A9D170652D1DA87300744184 /* Utils.swift */,
+				A9D170632D1DA55A00744184 /* Extensions.swift */,
 				A9D170602D1DA30C00744184 /* Puzzles */,
 				A9D1702D2D1D9F5A00744184 /* App.swift */,
 				A9D1702F2D1D9F5A00744184 /* AppView.swift */,
@@ -121,6 +136,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				A9D170602D1DA30C00744184 /* Puzzles */,
+				A9D170692D1DBE2900744184 /* Inputs */,
 			);
 			name = "AoC-iOS.swift";
 			packageProductDependencies = (
@@ -249,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D170642D1DA55B00744184 /* Extensions.swift in Sources */,
 				A9D170302D1D9F5A00744184 /* AppView.swift in Sources */,
+				A9D170682D1DB8A400744184 /* Modifiers.swift in Sources */,
 				A9D1702E2D1D9F5A00744184 /* App.swift in Sources */,
+				A9D170662D1DA87500744184 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
