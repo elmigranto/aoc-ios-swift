@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A9D1702E2D1D9F5A00744184 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1702D2D1D9F5A00744184 /* App.swift */; };
+		A9D170302D1D9F5A00744184 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1702F2D1D9F5A00744184 /* AppView.swift */; };
+		A9D170322D1D9F5B00744184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D170312D1D9F5B00744184 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A9D1703B2D1D9F5C00744184 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -25,24 +31,27 @@
 
 /* Begin PBXFileReference section */
 		A9D1702A2D1D9F5A00744184 /* AoC-iOS.swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AoC-iOS.swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9D1702D2D1D9F5A00744184 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		A9D1702F2D1D9F5A00744184 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		A9D170312D1D9F5B00744184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9D1703A2D1D9F5C00744184 /* AoC-iOS.swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AoC-iOS.swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D170442D1D9F5C00744184 /* AoC-iOS.swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AoC-iOS.swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A9D1702C2D1D9F5A00744184 /* AoC-iOS.swift */ = {
+		A9D1703D2D1D9F5C00744184 /* Tests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "AoC-iOS.swift";
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		A9D1703D2D1D9F5C00744184 /* AoC-iOS.swiftTests */ = {
+		A9D170472D1D9F5C00744184 /* TestsUI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "AoC-iOS.swiftTests";
+			path = TestsUI;
 			sourceTree = "<group>";
 		};
-		A9D170472D1D9F5C00744184 /* AoC-iOS.swiftUITests */ = {
+		A9D170602D1DA30C00744184 /* Puzzles */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "AoC-iOS.swiftUITests";
+			path = Puzzles;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +84,12 @@
 		A9D170212D1D9F5A00744184 = {
 			isa = PBXGroup;
 			children = (
-				A9D1702C2D1D9F5A00744184 /* AoC-iOS.swift */,
-				A9D1703D2D1D9F5C00744184 /* AoC-iOS.swiftTests */,
-				A9D170472D1D9F5C00744184 /* AoC-iOS.swiftUITests */,
+				A9D170602D1DA30C00744184 /* Puzzles */,
+				A9D1702D2D1D9F5A00744184 /* App.swift */,
+				A9D1702F2D1D9F5A00744184 /* AppView.swift */,
+				A9D170312D1D9F5B00744184 /* Assets.xcassets */,
+				A9D1703D2D1D9F5C00744184 /* Tests */,
+				A9D170472D1D9F5C00744184 /* TestsUI */,
 				A9D1702B2D1D9F5A00744184 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,7 +120,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A9D1702C2D1D9F5A00744184 /* AoC-iOS.swift */,
+				A9D170602D1DA30C00744184 /* Puzzles */,
 			);
 			name = "AoC-iOS.swift";
 			packageProductDependencies = (
@@ -131,7 +143,7 @@
 				A9D1703C2D1D9F5C00744184 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A9D1703D2D1D9F5C00744184 /* AoC-iOS.swiftTests */,
+				A9D1703D2D1D9F5C00744184 /* Tests */,
 			);
 			name = "AoC-iOS.swiftTests";
 			packageProductDependencies = (
@@ -154,7 +166,7 @@
 				A9D170462D1D9F5C00744184 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A9D170472D1D9F5C00744184 /* AoC-iOS.swiftUITests */,
+				A9D170472D1D9F5C00744184 /* TestsUI */,
 			);
 			name = "AoC-iOS.swiftUITests";
 			packageProductDependencies = (
@@ -212,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D170322D1D9F5B00744184 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +249,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D170302D1D9F5A00744184 /* AppView.swift in Sources */,
+				A9D1702E2D1D9F5A00744184 /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +410,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AoC-iOS.swift/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 842K2YLPYU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -424,7 +439,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AoC-iOS.swift/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 842K2YLPYU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
