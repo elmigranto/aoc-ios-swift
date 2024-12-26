@@ -3,7 +3,7 @@ import Testing
 
 struct AoC_iOS_swiftTests {
   @Test func example1 () {
-    let exampleOutput = "11"
+    let exampleOutput = 11
     let exampleInput = """
       3   4
       4   3
@@ -13,11 +13,11 @@ struct AoC_iOS_swiftTests {
       3   3
       """
 
-    #expect(Puzzles(exampleInput).d01p01() == exampleOutput)
+    #expect(Day1Puzzle1().solve(exampleInput) == exampleOutput)
   }
 
   @Test func example2 () {
-    let exampleOutput = "11"
+    let exampleOutput = 11
     let exampleInput = """
       13   14
       4   3
@@ -27,6 +27,6 @@ struct AoC_iOS_swiftTests {
       3   3
       """
 
-    #expect(Puzzles(exampleInput).d01p01() == exampleOutput)
+    #expect(Day1Puzzle1().solve(exampleInput) == exampleOutput)
   }
 }

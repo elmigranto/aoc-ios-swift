@@ -1,31 +1,37 @@
 import SwiftUI
 
-enum Puzzle: CaseIterable {
-  case d01p1
-}
+fileprivate let aoc2024: [String: any Solver.Type] = [
+  "d01p1": Day1Puzzle1.self
+]
 
 struct ContentView: View {
-  @State private var answers = [Puzzle: String]()
+  @State private var answers = [String: String]()
 
   var body: some View {
-    ForEach(Puzzle.allCases, id: \.self) { id in
+    let keys: [String] = Array(aoc2024.keys).sorted()
+
+    ForEach(keys, id: \.self) { puzzleId in
       GroupBox {
         VStack(alignment: .leading) {
-          let idString = String(describing: id)
-          let url = Bundle.main.url(forResource: idString, withExtension: "txt")!
+          let url = Bundle.main.url(forResource: puzzleId, withExtension: "txt")!
           let input = try! String(contentsOf: url, encoding: .utf8)
-          let answer = answers[id]
+          let answer = answers[puzzleId]
 
           HStack(alignment: .top) {
             VStack(alignment: .leading) {
-              Text(idString).font(.body.bold())
+              Text(puzzleId).font(.body.bold())
               Text(answer ?? "No answer")
             }
 
             Spacer()
+
             Button("Calculate", systemImage: "arrow.clockwise") {
               // TODO: Non-main thread
-              answers[id] = Puzzles(input).d01p01()
+              let Solver = aoc2024[puzzleId]!
+              let solver = Solver.init()
+              let answer: String = solver.solve(input)
+
+              answers[puzzleId] = answer
             }
             .labelStyle(.iconOnly)
           }
