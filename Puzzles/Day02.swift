@@ -23,20 +23,17 @@ struct Day02: Solver {
 
   private static func isSafeReport (_ report: [Int]) -> Bool {
     guard report.count > 1 else { return true }
+    let range = report[0] < report[1] ? -3...(-1) : 1...3
 
     for idx in report.indices.dropLast() {
       let current = report[idx]
       let next = report[idx + 1]
-      let safe = 1...3 ~= abs(current - next)
+      let safe = range ~= current - next
 
       guard safe else { return false }
     }
 
-    let sorted = report.sorted()
-    let asc = report == sorted
-    let desc = report.reversed() == sorted
-
-    return true && (asc || desc)
+    return true
   }
 }
 
