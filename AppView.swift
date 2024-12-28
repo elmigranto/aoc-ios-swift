@@ -1,8 +1,11 @@
 import SwiftUI
 
-fileprivate let aoc2024 = [
+fileprivate let days: [any Solver.Type] = [
   Day01.self,
-].reduce(into: [String: any Solver.Type]()) { acc, el in
+  Day02.self,
+]
+
+fileprivate let aoc2024 = days.reduce(into: [String: any Solver.Type]()) { acc, el in
   let key = String(describing: el)
   let value = el
 
@@ -19,8 +22,8 @@ struct ContentView: View {
     ForEach(keys, id: \.self) { puzzleId in
       GroupBox {
         VStack(alignment: .leading) {
-          let url = Bundle.main.url(forResource: puzzleId, withExtension: "txt")!
-          let input = try! String(contentsOf: url, encoding: .utf8)
+          let Solver = aoc2024[puzzleId]!
+          let input = Bundle.main.readPuzzleInput(Solver)
 
           HStack(alignment: .top) {
             VStack(alignment: .leading) {
@@ -34,7 +37,6 @@ struct ContentView: View {
 
             // TODO: Move outside of main thread.
             Button("Calculate", systemImage: "arrow.clockwise") {
-              let Solver = aoc2024[puzzleId]!
               let solver = Solver.init()
 
               // TODO: Parses twice due to `any Solver`.

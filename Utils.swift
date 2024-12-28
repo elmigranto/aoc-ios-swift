@@ -7,6 +7,11 @@ func pp<T> (_ val: T) -> T {
   return val
 }
 
+func pp<T> (_ prefix: String, _ val: T) -> T {
+  print("\(prefix):", val)
+  return val
+}
+
 //
 // MARK: - fn1 | fn2
 //
