@@ -14,7 +14,12 @@ protocol Solver {
   func solvePartTwo (_ input: String) -> String
 }
 
+// MARK: - Default implementations
+
 extension Solver {
+
+  // MARK: solverPartOne()
+
   func solvePartOne (_ input: String) -> Output {
     solvePartOne(parse(input))
   }
@@ -23,6 +28,8 @@ extension Solver {
     let out: Output = solvePartOne(input)
     return String(describing: out)
   }
+
+  // MARK: solverPartTwo()
 
   func solvePartTwo (_ input: String) -> Output {
     solvePartTwo(parse(input))

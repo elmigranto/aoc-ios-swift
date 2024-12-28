@@ -50,6 +50,7 @@
 			membershipExceptions = (
 				Day01.test.swift,
 				Day02.test.swift,
+				Day03.test.swift,
 			);
 			target = A9D170292D1D9F5A00744184 /* AoC-iOS.swift */;
 		};
@@ -58,6 +59,7 @@
 			membershipExceptions = (
 				Day01.test.swift,
 				Day02.test.swift,
+				Day03.test.swift,
 			);
 			target = A9D170392D1D9F5C00744184 /* AoC-iOS.swiftTests */;
 		};

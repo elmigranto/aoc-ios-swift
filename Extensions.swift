@@ -10,6 +10,20 @@ extension Collection where Element: AdditiveArithmetic {
   }
 }
 
+extension Collection {
+  func sum<T: AdditiveArithmetic> (by: (Element) -> T) -> T {
+    reduce(.zero) { acc, el in
+      acc + by(el)
+    }
+  }
+}
+
+extension Collection {
+  var nonEmpty: Bool {
+    count > 0
+  }
+}
+
 extension Array {
   func without (elemetAt index: Index) -> Self {
     var copy = self
