@@ -4,6 +4,7 @@ fileprivate let days: [any Solver.Type] = [
   Day01.self,
   Day02.self,
   Day03.self,
+  Day04.self
 ]
 
 fileprivate let aoc2024 = days.reduce(into: [String: any Solver.Type]()) { acc, el in
@@ -18,40 +19,42 @@ struct ContentView: View {
   @State private var answersPartTwo = [String: String]()
 
   var body: some View {
-    let keys: [String] = Array(aoc2024.keys).sorted()
+    let keys: [String] = Array(aoc2024.keys).sorted().reversed()
 
-    ForEach(keys, id: \.self) { puzzleId in
-      GroupBox {
-        VStack(alignment: .leading) {
-          let Solver = aoc2024[puzzleId]!
-          let input = Bundle.main.readPuzzleInput(Solver)
+    ScrollView(.vertical, showsIndicators: false) {
+      ForEach(keys, id: \.self) { puzzleId in
+        GroupBox {
+          VStack(alignment: .leading) {
+            let Solver = aoc2024[puzzleId]!
+            let input = Bundle.main.readPuzzleInput(Solver)
 
-          HStack(alignment: .top) {
-            VStack(alignment: .leading) {
-              Text(puzzleId).font(.body.bold())
+            HStack(alignment: .top) {
+              VStack(alignment: .leading) {
+                Text(puzzleId).font(.body.bold())
 
-              MaybeAnswer(title: "Part one", answer: answersPartOne[puzzleId])
-              MaybeAnswer(title: "Part two", answer: answersPartTwo[puzzleId])
+                MaybeAnswer(title: "Part one", answer: answersPartOne[puzzleId])
+                MaybeAnswer(title: "Part two", answer: answersPartTwo[puzzleId])
+              }
+
+              Spacer()
+
+              // TODO: Move outside of main thread.
+              Button("Calculate", systemImage: "arrow.clockwise") {
+                let solver = Solver.init()
+
+                // TODO: Parses twice due to `any Solver`.
+                answersPartOne[puzzleId] = solver.solvePartOne(input)
+                answersPartTwo[puzzleId] = solver.solvePartTwo(input)
+              }
+              .labelStyle(.iconOnly)
             }
 
-            Spacer()
-
-            // TODO: Move outside of main thread.
-            Button("Calculate", systemImage: "arrow.clockwise") {
-              let solver = Solver.init()
-
-              // TODO: Parses twice due to `any Solver`.
-              answersPartOne[puzzleId] = solver.solvePartOne(input)
-              answersPartTwo[puzzleId] = solver.solvePartTwo(input)
+            ScrollView(.vertical) {
+              Text(input)
+                .font(.caption.monospaced())
             }
-            .labelStyle(.iconOnly)
+            .frame(height: 100)
           }
-
-          ScrollView(.vertical) {
-            Text(input)
-              .font(.caption.monospaced())
-          }
-          .frame(height: 100)
         }
       }
     }

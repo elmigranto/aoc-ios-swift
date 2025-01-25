@@ -148,7 +148,6 @@ func tokenize (_ input: String) -> [Token] {
   var garbage = false
 
   func add_token (_ token: Token, _ length: Int) {
-    print(copy.prefix(5))
     if garbage {
       tokens.append(pp(.garbage))
       garbage = false

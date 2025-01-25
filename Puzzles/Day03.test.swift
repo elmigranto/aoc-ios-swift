@@ -55,6 +55,6 @@ import Foundation
     let input = solver.parse(Bundle.main.readPuzzleInput(Solver))
 
     #expect(solver.solvePartOne(input) == 183669043)
-    #expect(solver.solvePartTwo(input) == -1)
+    #expect(solver.solvePartTwo(input) == 59097164)
   }
 }

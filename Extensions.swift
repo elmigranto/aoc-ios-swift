@@ -22,6 +22,11 @@ extension Collection {
   var nonEmpty: Bool {
     count > 0
   }
+
+  func elementAt (_ index: Int) -> Element? {
+    guard 0..<self.count ~= index else { return nil }
+    return self[self.index(startIndex, offsetBy: index)]
+  }
 }
 
 extension Array {
