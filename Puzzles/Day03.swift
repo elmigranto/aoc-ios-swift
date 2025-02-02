@@ -149,11 +149,11 @@ func tokenize (_ input: String) -> [Token] {
 
   func add_token (_ token: Token, _ length: Int) {
     if garbage {
-      tokens.append(pp(.garbage))
+      tokens.append(.garbage)
       garbage = false
     }
 
-    tokens.append(pp(token))
+    tokens.append(token)
     copy.removeFirst(min(copy.count, length))
   }
 
