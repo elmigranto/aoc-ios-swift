@@ -1,5 +1,7 @@
 //fileprivate let plus: (Int, Int) -> Int = (+)
-fileprivate let minus: (Int, Int) -> Int = (-)
+fileprivate func minus (_ left: Int, _ right: Int) -> Int {
+  left - right
+}
 //fileprivate func unwrap<T> (_ value: T?) -> T { value! }
 //
 //

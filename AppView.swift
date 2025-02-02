@@ -39,13 +39,21 @@ struct ContentView: View {
 
               Spacer()
 
-              // TODO: Move outside of main thread.
               Button("Calculate", systemImage: "arrow.clockwise") {
-                let solver = Solver.init()
+                answersPartOne.removeValue(forKey: puzzleId)
+                answersPartTwo.removeValue(forKey: puzzleId)
 
-                // TODO: Parses twice due to `any Solver`.
-                answersPartOne[puzzleId] = solver.solvePartOne(input)
-                answersPartTwo[puzzleId] = solver.solvePartTwo(input)
+                Task.detached(priority: .userInitiated) {
+                  let solver = Solver.init()
+                  let answer1: String = solver.solvePartOne(input)
+                  let answer2: String = solver.solvePartTwo(input)
+
+                  await MainActor.run {
+                    // TODO: Parses twice due to `any Solver`.
+                    answersPartOne[puzzleId] = answer1
+                    answersPartTwo[puzzleId] = answer2
+                  }
+                }
               }
               .labelStyle(.iconOnly)
             }
