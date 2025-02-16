@@ -45,6 +45,7 @@
 				Day03.test.swift,
 				Day04.test.swift,
 				Day05.test.swift,
+				Day06.test.swift,
 			);
 			target = A9D170292D1D9F5A00744184 /* AoC-iOS.swift */;
 		};
@@ -56,6 +57,7 @@
 				Day03.test.swift,
 				Day04.test.swift,
 				Day05.test.swift,
+				Day06.test.swift,
 			);
 			target = A9D170392D1D9F5C00744184 /* AoC-iOS.swiftTests */;
 		};

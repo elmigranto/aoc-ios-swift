@@ -6,6 +6,7 @@ fileprivate let days: [any Solver.Type] = [
   Day03.self,
   Day04.self,
   Day05.self,
+  Day06.self,
 ]
 
 fileprivate let aoc2024 = days.reduce(into: [String: any Solver.Type]()) { acc, el in
